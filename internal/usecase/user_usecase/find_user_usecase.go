@@ -16,6 +16,11 @@ type UserUseCase struct {
 	UserRepository user_entity.UserRepositoryInterface
 }
 
+type UserInputDTO struct {
+	Id   string `json:"id"`
+	Name string `json:"name" binding:"required,min=1"`
+}
+
 type UserOutputDTO struct {
 	Id   string `json:"id"`
 	Name string `json:"name"`
@@ -25,6 +30,9 @@ type UserUseCaseInterface interface {
 	FindUserById(
 		ctx context.Context,
 		id string) (*UserOutputDTO, *internal_error.InternalError)
+	CreateUser(
+		ctx context.Context,
+		user UserInputDTO) *internal_error.InternalError
 }
 
 func (u *UserUseCase) FindUserById(
