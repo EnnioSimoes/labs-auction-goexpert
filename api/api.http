@@ -1,0 +1,46 @@
+
+### Create New User
+POST http://localhost:8080/user
+content-type: application/json
+
+{
+    "name":"Fulano"
+}
+
+### Create New Auction
+POST http://localhost:8080/auction
+content-type: application/json
+
+{
+    "product_name":"book",
+    "category":"books",
+    "description":"war of the worlds",
+    "condition":0
+}
+
+### Find Auction Opened
+GET http://localhost:8080/auction?status=0
+
+### Find Auction Closed
+GET http://localhost:8080/auction?status=1
+
+### Get Auction By Id
+GET http://localhost:8080/auction/7a5cfbb6-cb76-4e81-8ef8-b6b4f54d833d
+
+### Send Bid
+POST http://localhost:8080/bid
+
+{
+    "user_id": "29857243-be0e-4f51-8e8e-c96502ab4c21",
+    "auction_id": "7a5cfbb6-cb76-4e81-8ef8-b6b4f54d833d",
+    "amount": 135
+}
+
+### Get Winner By Auction Id
+GET http://localhost:8080/auction/winner/7a5cfbb6-cb76-4e81-8ef8-b6b4f54d833d
+
+### Get Bids By Auction Id fail
+GET http://localhost:8080/bid/7a5cfbb6-cb76-4e81-8ef8-b6b4f54d833d
+
+### Get User By Id
+GET http://localhost:8080/user/29857243-be0e-4f51-8e8e-c96502ab4c21
