@@ -35,7 +35,7 @@ docker-compose up -d
 * MongoDB: localhost:27017
 * Mongo Express: localhost:8081
   * user: admin
-  * senha: admin
+  * senha: pass
 
 Utilize o Mongo Express (http://localhost:8081) para facilitar o acompanhamento da manipulação dos dados.
 
