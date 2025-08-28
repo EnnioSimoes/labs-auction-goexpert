@@ -18,10 +18,10 @@ content-type: application/json
     "condition":0
 }
 
-### Find Auction Opened
+### Find Auction Active
 GET http://localhost:8080/auction?status=0
 
-### Find Auction Closed
+### Find Auction Completed
 GET http://localhost:8080/auction?status=1
 
 ### Get Auction By Id
